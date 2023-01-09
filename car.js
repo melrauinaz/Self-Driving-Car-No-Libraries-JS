@@ -10,7 +10,7 @@ class Car{
     this.acceleration=0.2;
     // stop the car from going to fast, give it some friction
     this.maxSpeed=3;
-    // maybe declare maxspeedreverse here
+    // maybe declare maxspeedreverse here in future
     this.friction=0.05;
 
     // fix to follow laws of physics
