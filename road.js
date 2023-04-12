@@ -22,10 +22,12 @@ class Road{
       [topRight,bottomRight]
     ];
   } 
-  
+
+  // no matter the number of lanes the car finds the center of the lane
    getLaneCenter(laneIndex){
      const laneWidth=this.width/this.laneCount;
      return this.left+laneWidth/2+
+       // added min causing car to stay on a lane visible on canvas
         Math.min(laneIndex,this.laneCount-1)*laneWidth;
    } 
 

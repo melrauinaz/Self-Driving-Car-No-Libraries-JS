@@ -1,6 +1,7 @@
 class Car{
     constructor(x,y,width,height){// properties
-    this.x=x;//attributes
+    //attributes in object
+    this.x=x;
     this.y=y;
     this.width=width;
     this.height=height;
@@ -23,7 +24,7 @@ class Car{
   update(){
     this.#move();
   }
-
+// move method
   #move(){
     // write our update method
     //update(){
@@ -53,6 +54,7 @@ class Car{
         this.speed+=this.friction;
       }
       // keep the car from moving when keys(gas) are not depressed
+    // otherwise since friction never hits 0 car will move forward
       if(Math.abs(this.speed)<this.friction){
         this.speed=0;
       }
@@ -63,6 +65,7 @@ class Car{
           // implementing left and right
         if(this.controls.left){
           // implement better physics then 'this.x-=2;'
+          // so car doesnt go faster when it goes diag to right/left
           this.angle+=0.03*flip;
         }
         if(this.controls.right){
@@ -72,6 +75,7 @@ class Car{
       }
   
       // this.y-=this.speed;
+     // keep car from moving like a tank
       this.x-=Math.sin(this.angle)*this.speed;
       this.y-=Math.cos(this.angle)*this.speed;
      
@@ -95,7 +99,7 @@ class Car{
       this.height      
     );
     ctx.fill();
-
+    // stop infinite translations and rotations, may look funny, but not what we want
     ctx.restore();
   
   }
